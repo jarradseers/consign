@@ -3,7 +3,6 @@
  * Autoload your scripts.
  *
  * @author Jarrad Seers <jarrad@seers.me>
- * @created 11/08/2014 NZST
  */
 
 // Module dependencies.

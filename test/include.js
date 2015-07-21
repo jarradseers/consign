@@ -3,7 +3,6 @@
  * Autoload your scripts.
  *
  * @author Jarrad Seers <jarrad@seers.me>
- * @created 11/08/2014 NZST
  */
 
 // Module dependencies.
@@ -26,6 +25,7 @@ module.exports = function(consign, assert) {
   it('Should include all test files in the test app', function() {
     var instance = consign({verbose: verbose}).include('test/test-app')
       , files = [
+        'test/test-app/config/dev-config.json',
         'test/test-app/controllers/one.js',
         'test/test-app/controllers/three.js',
         'test/test-app/controllers/two.js',
@@ -61,6 +61,7 @@ module.exports = function(consign, assert) {
         'test/test-app/models/one.js',
         'test/test-app/models/three.js',
         'test/test-app/models/two.js',
+        'test/test-app/config/dev-config.json',
         'test/test-app/controllers/one.js',
         'test/test-app/controllers/three.js',
         'test/test-app/controllers/two.js' 

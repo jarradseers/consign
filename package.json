@@ -1,6 +1,6 @@
 {
-  "name": "Consign",
-  "description": "Autoload modules into an object",
+  "name": "consign",
+  "description": "Autoload your scripts.",
   "version": "0.1.0",
   "author": {
     "name": "Jarrad Seers",
