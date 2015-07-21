@@ -1,0 +1,32 @@
+{
+  "name": "Consign",
+  "description": "Autoload modules into an object, supports auto-reload",
+  "version": "0.1.0",
+  "author": {
+    "name": "Jarrad Seers",
+    "email": "jarrad@seers.me"
+  },
+  "contributors": [],
+  "main": "index",
+  "keywords": [
+    "mvc",
+    "autoload",
+    "express",
+    "express-load",
+    "auto-configure",
+    "configuration",
+    "consign",
+    "load",
+    "require"
+  ],
+  "engines": {
+    "node": "*"
+  },
+  "repository": "git://github.com/jarradseers/consign",
+  "devDependencies": {
+    "mocha": "^1.21.4"
+  },
+  "scripts": {
+    "test": "mocha"
+  }
+}

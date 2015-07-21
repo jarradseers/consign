@@ -1,0 +1,16 @@
+._*
+CVS
+.svn
+*.log
+*.swp
+Icon?
+.Trashes
+Thumbs.db
+.DS_Store
+.DS_Store?
+ehthumbs.db
+node_modules
+.wafpickle-*
+.lock-wscript
+npm-debug.log
+.Spotlight-V100
