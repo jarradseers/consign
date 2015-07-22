@@ -1,7 +1,7 @@
 {
   "name": "consign",
   "description": "Autoload your scripts.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Jarrad Seers",
     "email": "jarrad@seers.me"
