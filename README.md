@@ -1,7 +1,7 @@
 # Consign
 
 [![Build Status](https://travis-ci.org/jarradseers/consign.svg?branch=develop)](https://travis-ci.org/jarradseers/consign)
-  
+
   Autoload your scripts! _the successor to `express-load`_
 
   Consign makes applications easier to develop with logical file separation and automatic script loading.
@@ -72,6 +72,7 @@ Current supported locale (for logging output):
   - en-nz
   - en-us
   - fr-fr
+  - pt-br
   - pl
   - zh-cn
 
