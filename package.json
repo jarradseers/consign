@@ -25,6 +25,7 @@
   },
   "repository": "git://github.com/jarradseers/consign",
   "devDependencies": {
+    "middleware-chain": "^1.0.1",
     "mocha": "^1.21.4"
   },
   "scripts": {

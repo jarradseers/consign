@@ -1,3 +1,11 @@
+/*!
+ * Consign.
+ * Autoload your scripts.
+ *
+ * @author Jarrad Seers <jarrad@seers.me>
+ * @license MIT
+ */
+
 var consign = require('../../')
   , app = {}
 ;

@@ -3,7 +3,9 @@
  * Autoload your scripts.
  *
  * @author Jarrad Seers <jarrad@seers.me>
+ * @license MIT
  */
+
 
 // Module dependencies.
 

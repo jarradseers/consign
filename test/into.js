@@ -1,9 +1,11 @@
 /*!
- * Consign include tests.
+ * Consign into tests.
  * Autoload your scripts.
  *
  * @author Jarrad Seers <jarrad@seers.me>
+ * @license MIT
  */
+
 
 // Module dependencies.
 var path = require('path');

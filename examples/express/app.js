@@ -1,9 +1,17 @@
+/*!
+ * Consign.
+ * Autoload your scripts.
+ *
+ * @author Jarrad Seers <jarrad@seers.me>
+ * @license MIT
+ */
+
 var express = require('express')
   , consign = require('../../')
   , app = express()
 ;
 
-consign()
+consign({cwd: 'api'})
   .include('models')
   .then('middleware')
   .then('routers')
