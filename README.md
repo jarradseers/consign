@@ -8,6 +8,8 @@
 
   Consign can be used to autoload models, routes, schemas, configs, controllers, object maps... etc...
 
+  Also if you are writing scripts and just need to add some structure, check out (middleware-chain)[https://github.com/jarradseers/middleware-chain], there is a new example for this usage in the [examples](examples) folder.
+
 ## Usage
 
 ```js
