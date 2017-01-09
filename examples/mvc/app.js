@@ -13,7 +13,6 @@ var consign = require('../../')
 consign()
   .include('models')
   .then('controllers')
-  .then('routers')
   .into(app)
 ;
 
