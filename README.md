@@ -43,6 +43,7 @@ $ npm install consign
   * Test driven
   * Fast, Light-weight with no external dependencies
   * Highly configurable
+  * Passes in relative path to included module as last argument
 
 ## Options
 

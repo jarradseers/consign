@@ -6,6 +6,7 @@
  * @license MIT
  */
 
-module.exports = function(app) {
+module.exports = function(app, relativePath) {
+  if (relativePath) this.relativePath = relativePath;
   return this;
 };

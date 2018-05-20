@@ -74,5 +74,14 @@ module.exports = function(consign, assert) {
     assert.equal(app.controllers.one.run, true);
   });
 
+  it('Should pass in the relative path to the loaded item as the last argument', function() {
+    var app = {};
+    consign(options)
+        .include('controllers')
+        .into(app)
+    ;
+
+    assert.equal(app.controllers.two.relativePath, './controllers/two.js');
+  });
 };
 
