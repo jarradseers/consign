@@ -1,3 +1,3 @@
-module.exports = function(app) {
+exports.default = function(app) {
   return this;
 };
