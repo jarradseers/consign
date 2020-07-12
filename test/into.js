@@ -74,5 +74,16 @@ module.exports = function(consign, assert) {
     assert.equal(app.controllers.one.run, true);
   });
 
+  it('Should be able to execute a script with alias', function() {
+    var app = {};
+    consign(options)
+      .include('controllers/one.js')
+      .as('testing.one')
+      .into(app, true)
+    ;
+
+    assert.equal(app.testing.one.run, true);
+  });
+
 };
 

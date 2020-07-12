@@ -107,6 +107,20 @@ Current supported locale (for logging output):
   app.controllers.user
   ```
 
+  When Including a single file you could also use the `as` function to give it a custom name:
+
+  ```js
+  consign()
+    .include('services/gateway/myGateway.js')
+    .as('gateway.default')
+    .into(app)
+  ```
+
+  Would result in:
+  ```js
+  app.gateway.default
+  ```
+
 ### File Extensions
 
   Defaults to an array containing `.js`, .`json` and `.node`, new ones are concatenated instead of replaced.
