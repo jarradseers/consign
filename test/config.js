@@ -1,5 +1,5 @@
 /*!
- * Consign config tests.
+ * Consign.
  * Autoload your scripts.
  *
  * @author Jarrad Seers <jarrad@seers.me>
@@ -7,56 +7,83 @@
  */
 
 // Module dependencies.
-var path = require('path');
+const { it } = require('node:test');
+const path = require('path');
 
 module.exports = function(consign, assert) {
 
   // Test setup.
-  var cwd = path.resolve('test/test-app/controllers')
-    , verbose = false
-  ;
+  const cwd = path.resolve('test/test-app/controllers');
+  const verbose = false;
 
   it('Should set verbose to false', function() {
-    var instance = consign({verbose: false});
+    const instance = consign({verbose: false});
     assert.equal(false, instance._options.verbose);
   });
 
   it('Should set a custom logger', function() {
-    var logger = { hello: true, info: function() {} }
-      , instance = consign({logger: logger, verbose: verbose})
-    ;
-    return 'hello' in instance._options.logger;
+    const logger = { hello: true, info: function() {} };
+    const instance = consign({logger: logger, verbose: verbose});
+    assert.equal(instance._options.logger, logger);
   });
 
   it('Should default to console with no logger option', function() {
-    var instance = consign({verbose: verbose});
-    return 'log' in instance._options.logger;
+    const instance = consign({verbose: verbose});
+    assert.equal(instance._options.logger, console);
   });
 
-  it('Should set the woking directory to `' + cwd + '`', function() {
-    var instance = consign({cwd: cwd, verbose: verbose});
-    return assert.equal(instance._options.cwd, cwd);
+  it('Should set the working directory to `' + cwd + '`', function() {
+    const instance = consign({cwd: cwd, verbose: verbose});
+    assert.equal(instance._options.cwd, cwd);
+  });
+
+  it('Should default to the .js, .json and .node extensions', function() {
+    const instance = consign({verbose: verbose});
+    assert.deepEqual(instance._options.extensions, ['.js', '.json', '.node']);
   });
 
   it('Should add a new possible extension', function() {
-    var extension = '.hello'
-      , instance = consign({extensions: extension, verbose: verbose})
-    ;
-    return assert.equal(instance._options.extensions.indexOf(extension), 0);
+    assert.deepEqual(
+      consign({extensions: '.hello', verbose: verbose})._options.extensions,
+      ['.js', '.json', '.node', '.hello']
+    );
+    assert.deepEqual(
+      consign({extensions: ['.a', '.b'], verbose: verbose})._options.extensions,
+      ['.js', '.json', '.node', '.a', '.b']
+    );
   });
 
   it('Should load the en-nz locale instead of default en-us', function() {
-    var locale = 'en-nz'
-      , us = 'Initialized in'
-      , nz = 'Initialised in'
-      , instance = consign({locale: locale, verbose: verbose})
-    ;
-    return assert.equal(instance._[us], nz);
+    const instance = consign({locale: 'en-nz', verbose: verbose});
+    assert.equal(instance._['Initialized in'], 'Initialised in');
   });
 
-  it('Should disable watch feature', function() {
-    var instance = consign({watch: false, verbose: verbose});
-    return assert.equal(instance._options.watch, false);
+  it('Should log through the logger using the logging type', function() {
+    const lines = [];
+    const logger = {
+      debug: function(line) { lines.push('debug ' + line); },
+      log: function(line) { lines.push('log ' + line); },
+      warn: function(line) { lines.push('warn ' + line); },
+      error: function(line) { lines.push('error ' + line); }
+    };
+
+    consign({cwd: 'test/test-app', logger: logger, loggingType: 'debug'})
+      .include('config')
+      .include('missing');
+
+    assert.equal(lines.length, 3);
+    assert.match(lines[0], /^debug consign v[\d.]+ Initialized in test\/test-app$/);
+    assert.match(lines[1], /^log \+ \.[\\/]config[\\/]dev-config\.json$/);
+    assert.match(lines[2], /^error ! Entity not found /);
   });
+
+  it('Should not log when verbose is false', function() {
+    const logger = { info: assert.fail, log: assert.fail, warn: assert.fail, error: assert.fail };
+
+    consign({cwd: 'test/test-app', logger: logger, verbose: false})
+      .include('config')
+      .include('missing')
+      .include();
+  });
+
 };
-

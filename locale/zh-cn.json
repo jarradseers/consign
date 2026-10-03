@@ -1,5 +1,7 @@
 {
-  "Initialized in"          : "在初始化",
-  "Ignoring hidden entity"  : "忽略隱藏的實體",
-  "Entity not found"        : "文件未找到"
+  "Initialized in"         : "在初始化",
+  "Ignoring hidden entity" : "忽略隱藏的實體",
+  "Entity not found"       : "文件未找到",
+  "Ignoring extension"     : "忽略擴展名",
+  "Ignoring file"          : "忽略文件"
 }

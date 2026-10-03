@@ -1,5 +1,7 @@
 {
-  "Initialized in"          : "Initialised in",
-  "Ignoring hidden entity"  : "Ignoring hidden entity",
-  "Entity not found"        : "Entity not found"
+  "Initialized in"         : "Initialised in",
+  "Ignoring hidden entity" : "Ignoring hidden entity",
+  "Entity not found"       : "Entity not found",
+  "Ignoring extension"     : "Ignoring extension",
+  "Ignoring file"          : "Ignoring file"
 }

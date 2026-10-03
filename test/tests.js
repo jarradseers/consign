@@ -1,37 +1,33 @@
 /*!
- * Consign config tests.
+ * Consign.
  * Autoload your scripts.
  *
  * @author Jarrad Seers <jarrad@seers.me>
  * @license MIT
  */
 
-
 // Module dependencies.
-var consign = require(__dirname + '/../')
-  , pack = require(__dirname + '/../package')
-  , path = require('path')
-  , assert = require('assert')
-;
+const { describe } = require('node:test');
+const assert = require('node:assert');
+const path = require('path');
+const consign = require('../');
+const pack = require('../package');
+
+// The test cases use paths relative to the package root.
+process.chdir(path.join(__dirname, '..'));
 
 // Test file setup.
-var tests = [
+const tests = [
   'config',
   'locale',
   'include',
   'exclude',
-  'into'
+  'into',
+  'ignore'
 ];
 
 function formatName(name) {
-  var parts = name.split('-');
-
-  for (var p in parts) {
-    var part = parts[p];
-    parts[p] = part.charAt(0).toUpperCase() + part.slice(1);
-  }
-
-  return parts.join(' ');
+  return name.charAt(0).toUpperCase() + name.slice(1);
 }
 
 // Include unit tests.

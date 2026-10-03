@@ -1,5 +1,7 @@
 {
-  "Initialized in"          : "Zainicjowana w",
-  "Ignoring hidden entity"  : "Ignorując ukryte jednostki",
-  "Entity not found"        : "Nie znaleziono pliku"
+  "Initialized in"         : "Zainicjowana w",
+  "Ignoring hidden entity" : "Ignorując ukryte jednostki",
+  "Entity not found"       : "Nie znaleziono pliku",
+  "Ignoring extension"     : "Ignorowanie rozszerzenia",
+  "Ignoring file"          : "Ignorowanie pliku"
 }
