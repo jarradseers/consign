@@ -1,13 +1,24 @@
 {
   "name": "consign",
+  "version": "0.2.0",
   "description": "Autoload your scripts.",
-  "version": "0.1.7",
-  "author": {
-    "name": "Jarrad Seers",
-    "email": "jarrad@seers.me"
+  "main": "index.js",
+  "files": [
+    "index.js",
+    "lib",
+    "locale"
+  ],
+  "engines": {
+    "node": ">=6.0.0"
   },
-  "contributors": [],
-  "main": "index",
+  "scripts": {
+    "lint": "eslint .",
+    "test": "eslint . && node --test test/tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jarradseers/consign.git"
+  },
   "keywords": [
     "mvc",
     "autoload",
@@ -20,15 +31,16 @@
     "load",
     "require"
   ],
-  "engines": {
-    "node": "*"
+  "author": "Jarrad Seers <jarrad@seers.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jarradseers/consign/issues"
   },
-  "repository": "git://github.com/jarradseers/consign",
+  "homepage": "https://github.com/jarradseers/consign#readme",
   "devDependencies": {
-    "middleware-chain": "^1.0.1",
-    "mocha": "^10.8.2"
-  },
-  "scripts": {
-    "test": "mocha"
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.12.0",
+    "globals": "^17.13.0",
+    "middleware-chain": "^1.0.1"
   }
 }
